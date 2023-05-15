@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Funeral services</h1>
+
+<div id="funeral_services">
+  <% @funeral_services.each do |funeral_service| %>
+    <%= render funeral_service %>
+    <p>
+      <%= link_to "Show this funeral service", funeral_service %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New funeral service", new_funeral_service_path %>

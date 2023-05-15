@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @mourning_card %>
+
+<div>
+  <%= link_to "Edit this mourning card", edit_mourning_card_path(@mourning_card) %> |
+  <%= link_to "Back to mourning cards", mourning_cards_path %>
+
+  <%= button_to "Destroy this mourning card", @mourning_card, method: :delete %>
+</div>

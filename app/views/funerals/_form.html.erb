@@ -1,0 +1,47 @@
+<%= form_with(model: funeral) do |form| %>
+  <% if funeral.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(funeral.errors.count, "error") %> prohibited this funeral from being saved:</h2>
+
+      <ul>
+        <% funeral.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :funeral_id, style: "display: block" %>
+    <%= form.number_field :funeral_id %>
+  </div>
+
+  <div>
+    <%= form.label :deceased_id, style: "display: block" %>
+    <%= form.text_field :deceased_id %>
+  </div>
+
+  <div>
+    <%= form.label :burial_place, style: "display: block" %>
+    <%= form.text_field :burial_place %>
+  </div>
+
+  <div>
+    <%= form.label :burial_type, style: "display: block" %>
+    <%= form.text_field :burial_type %>
+  </div>
+
+  <div>
+    <%= form.label :reception_location, style: "display: block" %>
+    <%= form.text_field :reception_location %>
+  </div>
+
+  <div>
+    <%= form.label :funeral_date, style: "display: block" %>
+    <%= form.date_field :funeral_date %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

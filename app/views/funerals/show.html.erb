@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @funeral %>
+
+<div>
+  <%= link_to "Edit this funeral", edit_funeral_path(@funeral) %> |
+  <%= link_to "Back to funerals", funerals_path %>
+
+  <%= button_to "Destroy this funeral", @funeral, method: :delete %>
+</div>

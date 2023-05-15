@@ -1,0 +1,37 @@
+<%= form_with(model: funeral_service_order) do |form| %>
+  <% if funeral_service_order.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(funeral_service_order.errors.count, "error") %> prohibited this funeral_service_order from being saved:</h2>
+
+      <ul>
+        <% funeral_service_order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :order_id, style: "display: block" %>
+    <%= form.number_field :order_id %>
+  </div>
+
+  <div>
+    <%= form.label :funeral_id, style: "display: block" %>
+    <%= form.text_field :funeral_id %>
+  </div>
+
+  <div>
+    <%= form.label :service_id, style: "display: block" %>
+    <%= form.text_field :service_id %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

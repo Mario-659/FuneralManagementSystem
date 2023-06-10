@@ -1,8 +1,7 @@
-<%= form_with(model: funeral_service_order) do |form| %>
+<%= form_with(model: funeral_service_order, html: { class: 'needs-validation', novalidate: '' }) do |form| %>
   <% if funeral_service_order.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(funeral_service_order.errors.count, "error") %> prohibited this funeral_service_order from being saved:</h2>
-
+    <div class="alert alert-danger">
+      <h4><%= pluralize(funeral_service_order.errors.count, "error") %> prohibited this funeral service order from being saved:</h4>
       <ul>
         <% funeral_service_order.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,27 +10,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :order_id, style: "display: block" %>
-    <%= form.number_field :order_id %>
+  <div class="mb-3">
+    <%= form.label :order_id %>
+    <%= form.number_field :order_id, class: 'form-control' %>
   </div>
 
-  <div>
-    <%= form.label :funeral_id, style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :funeral_id, class: 'form-control' %>
     <%= form.text_field :funeral_id %>
   </div>
 
-  <div>
-    <%= form.label :service_id, style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :service_id, class: 'form-control' %>
     <%= form.text_field :service_id %>
   </div>
 
-  <div>
-    <%= form.label :quantity, style: "display: block" %>
+  <div class="mb-3">
+    <%= form.label :quantity, class: 'form-control' %>
     <%= form.number_field :quantity %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

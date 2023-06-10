@@ -1,14 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-5">
 
-<h1>Deceaseds</h1>
-
-<div id="deceaseds">
-  <% @deceaseds.each do |deceased| %>
-    <%= render deceased %>
-    <p>
-      <%= link_to "Show this deceased", deceased %>
-    </p>
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
   <% end %>
-</div>
 
-<%= link_to "New deceased", new_deceased_path %>
+  <h1 class="display-4 mb-4">Deceaseds</h1>
+
+  <div id="deceaseds">
+    <% @deceaseds.each do |deceased| %>
+      <%= render deceased %>
+      <p class="mb-3">
+        <%= link_to "Show this deceased", deceased, class: "btn btn-primary" %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="mt-4">
+    <%= link_to "New deceased", new_deceased_path, class: "btn btn-success" %>
+  </div>
+
+</div>

@@ -1,10 +1,14 @@
-<h1>Editing funeral</h1>
+<div class="container mt-5">
 
-<%= render "form", funeral: @funeral %>
+  <h1 class="display-4 mb-4">Editing Funeral</h1>
 
-<br>
+  <div class="mb-4">
+    <%= render "form", funeral: @funeral %>
+  </div>
 
-<div>
-  <%= link_to "Show this funeral", @funeral %> |
-  <%= link_to "Back to funerals", funerals_path %>
+  <div class="mt-4">
+    <%= link_to "Show this funeral", @funeral, class: "btn btn-info me-3" %> |
+    <%= link_to "Back to funerals", funerals_path, class: "btn btn-secondary ml-3" %>
+  </div>
+
 </div>

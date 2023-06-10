@@ -1,14 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-5">
 
-<h1>Funeral service orders</h1>
-
-<div id="funeral_service_orders">
-  <% @funeral_service_orders.each do |funeral_service_order| %>
-    <%= render funeral_service_order %>
-    <p>
-      <%= link_to "Show this funeral service order", funeral_service_order %>
-    </p>
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
   <% end %>
-</div>
 
-<%= link_to "New funeral service order", new_funeral_service_order_path %>
+  <h1 class="display-4 mb-4">Funeral Service Orders</h1>
+
+  <div id="funeral_service_orders">
+    <% @funeral_service_orders.each do |funeral_service_order| %>
+      <%= render funeral_service_order %>
+      <p class="mb-3">
+        <%= link_to "Show this funeral service order", funeral_service_order, class: "btn btn-primary" %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="mt-4">
+    <%= link_to "New funeral service order", new_funeral_service_order_path, class: "btn btn-success" %>
+  </div>
+
+</div>

@@ -1,27 +1,9 @@
-<div id="<%= dom_id user %>">
-  <p>
-    <strong>User:</strong>
-    <%= user.user_id %>
-  </p>
-
-  <p>
-    <strong>User role:</strong>
-    <%= user.user_role %>
-  </p>
-
-  <p>
-    <strong>Username:</strong>
-    <%= user.username %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= user.email %>
-  </p>
-
-  <p>
-    <strong>Password:</strong>
-    <%= user.password %>
-  </p>
-
+<div class="card mb-4" id="<%= dom_id user %>">
+  <div class="card-body">
+    <h5 class="card-title">User ID: <%= user.user_id %></h5>
+    <p class="card-text"><strong>User role:</strong> <%= user.user_role %></p>
+    <p class="card-text"><strong>Username:</strong> <%= user.username %></p>
+    <p class="card-text"><strong>Email:</strong> <%= user.email %></p>
+    <p class="card-text"><strong>Password:</strong> <%= user.password %></p>
+  </div>
 </div>

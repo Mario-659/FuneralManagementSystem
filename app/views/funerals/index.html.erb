@@ -1,14 +1,24 @@
-<p style="color: green"><%= notice %></p>
+  <div class="container mt-5">
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
 
-<h1>Funerals</h1>
+    <h1 class="display-4 mb-4">Funerals</h1>
 
-<div id="funerals">
-  <% @funerals.each do |funeral| %>
-    <%= render funeral %>
-    <p>
-      <%= link_to "Show this funeral", funeral %>
-    </p>
-  <% end %>
-</div>
+    <div id="funerals">
+      <% @funerals.each do |funeral| %>
+        <div class="card mb-3">
+          <div class="card-body">
+            <%= render funeral %>
+            <p class="mt-2">
+              <%= link_to "Show this funeral", funeral, class: "btn btn-primary" %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
-<%= link_to "New funeral", new_funeral_path %>
+    <div class="mt-4">
+      <%= link_to "New funeral", new_funeral_path, class: "btn btn-success" %>
+    </div>
+  </div>

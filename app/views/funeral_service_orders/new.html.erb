@@ -1,9 +1,13 @@
-<h1>New funeral service order</h1>
+<div class="container mt-5">
 
-<%= render "form", funeral_service_order: @funeral_service_order %>
+  <h1 class="display-4 mb-4">New Funeral Service Order</h1>
 
-<br>
+  <div class="mb-4">
+    <%= render "form", funeral_service_order: @funeral_service_order %>
+  </div>
 
-<div>
-  <%= link_to "Back to funeral service orders", funeral_service_orders_path %>
+  <div class="mt-4">
+    <%= link_to "Back to funeral service orders", funeral_service_orders_path, class: "btn btn-secondary" %>
+  </div>
+
 </div>

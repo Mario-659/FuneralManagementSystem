@@ -1,10 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-5">
 
-<%= render @mourning_card %>
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
 
-<div>
-  <%= link_to "Edit this mourning card", edit_mourning_card_path(@mourning_card) %> |
-  <%= link_to "Back to mourning cards", mourning_cards_path %>
+  <div class="mb-4">
+    <%= render @mourning_card %>
+  </div>
 
-  <%= button_to "Destroy this mourning card", @mourning_card, method: :delete %>
+  <div class="mt-4 d-flex align-items-center">
+    <%= link_to "Edit this mourning card", edit_mourning_card_path(@mourning_card), class: "btn btn-warning me-3" %>
+    <span class="me-3">|</span>
+    <%= link_to "Back to mourning cards", mourning_cards_path, class: "btn btn-secondary me-3" %>
+    <%= button_to "Destroy this mourning card", @mourning_card, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
+  </div>
+
 </div>

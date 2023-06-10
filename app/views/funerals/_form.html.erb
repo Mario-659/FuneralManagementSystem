@@ -1,6 +1,6 @@
-<%= form_with(model: funeral) do |form| %>
+<%= form_with(model: funeral, local: true, html: { class: 'needs-validation', novalidate: '' }) do |form| %>
   <% if funeral.errors.any? %>
-    <div style="color: red">
+    <div class="alert alert-danger">
       <h2><%= pluralize(funeral.errors.count, "error") %> prohibited this funeral from being saved:</h2>
 
       <ul>
@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :funeral_id, style: "display: block" %>
-    <%= form.number_field :funeral_id %>
+  <div class="mb-3">
+    <%= form.label :funeral_id, class: "form-label" %>
+    <%= form.number_field :funeral_id, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.label :deceased_id, style: "display: block" %>
-    <%= form.text_field :deceased_id %>
+  <div class="mb-3">
+    <%= form.label :deceased_id, class: "form-label" %>
+    <%= form.text_field :deceased_id, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.label :burial_place, style: "display: block" %>
-    <%= form.text_field :burial_place %>
+  <div class="mb-3">
+    <%= form.label :burial_place, class: "form-label" %>
+    <%= form.text_field :burial_place, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.label :burial_type, style: "display: block" %>
-    <%= form.text_field :burial_type %>
+  <div class="mb-3">
+    <%= form.label :burial_type, class: "form-label" %>
+    <%= form.text_field :burial_type, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.label :reception_location, style: "display: block" %>
-    <%= form.text_field :reception_location %>
+  <div class="mb-3">
+    <%= form.label :reception_location, class: "form-label" %>
+    <%= form.text_field :reception_location, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.label :funeral_date, style: "display: block" %>
-    <%= form.date_field :funeral_date %>
+  <div class="mb-3">
+    <%= form.label :funeral_date, class: "form-label" %>
+    <%= form.date_field :funeral_date, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="mb-4">
+    <%= form.submit class: "btn btn-primary mt-2" %>
   </div>
 <% end %>

@@ -1,8 +1,7 @@
-<%= form_with(model: mourning_card) do |form| %>
+<%= form_with(model: mourning_card, html: { class: 'needs-validation', novalidate: '' }) do |form| %>
   <% if mourning_card.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(mourning_card.errors.count, "error") %> prohibited this mourning_card from being saved:</h2>
-
+    <div class="alert alert-danger">
+      <h4><%= pluralize(mourning_card.errors.count, "error") %> prohibited this mourning card from being saved:</h4>
       <ul>
         <% mourning_card.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,17 +10,17 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :card_id, style: "display: block" %>
-    <%= form.number_field :card_id %>
+  <div class="mb-3">
+    <%= form.label :card_id %>
+    <%= form.number_field :card_id, class: 'form-control' %>
   </div>
 
-  <div>
-    <%= form.label :funeral_id, style: "display: block" %>
-    <%= form.text_field :funeral_id %>
+  <div class="mb-3">
+    <%= form.label :funeral_id %>
+    <%= form.text_field :funeral_id, class: 'form-control' %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

@@ -1,32 +1,31 @@
-<div id="<%= dom_id funeral %>">
-  <p>
-    <strong>Funeral:</strong>
-    <%= funeral.funeral_id %>
-  </p>
+<div class="card mb-4" id="<%= dom_id funeral %>">
+  <div class="card-body">
+    <h5 class="card-title">Funeral <%= funeral.funeral_id %></h5>
 
-  <p>
-    <strong>Deceased:</strong>
-    <%= funeral.deceased_id %>
-  </p>
+    <p class="card-text">
+      <strong>Deceased:</strong>
+      <%= funeral.deceased_id %>
+    </p>
 
-  <p>
-    <strong>Burial place:</strong>
-    <%= funeral.burial_place %>
-  </p>
+    <p class="card-text">
+      <strong>Burial Place:</strong>
+      <%= funeral.burial_place %>
+    </p>
 
-  <p>
-    <strong>Burial type:</strong>
-    <%= funeral.burial_type %>
-  </p>
+    <p class="card-text">
+      <strong>Burial Type:</strong>
+      <%= funeral.burial_type %>
+    </p>
 
-  <p>
-    <strong>Reception location:</strong>
-    <%= funeral.reception_location %>
-  </p>
+    <p class="card-text">
+      <strong>Reception Location:</strong>
+      <%= funeral.reception_location %>
+    </p>
 
-  <p>
-    <strong>Funeral date:</strong>
-    <%= funeral.funeral_date %>
-  </p>
+    <p class="card-text">
+      <strong>Funeral Date:</strong>
+      <%= funeral.funeral_date %>
+    </p>
 
+  </div>
 </div>

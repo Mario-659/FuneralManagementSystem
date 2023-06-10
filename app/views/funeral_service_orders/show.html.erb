@@ -1,10 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-5">
 
-<%= render @funeral_service_order %>
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
 
-<div>
-  <%= link_to "Edit this funeral service order", edit_funeral_service_order_path(@funeral_service_order) %> |
-  <%= link_to "Back to funeral service orders", funeral_service_orders_path %>
+  <div class="mb-4">
+    <%= render @funeral_service_order %>
+  </div>
 
-  <%= button_to "Destroy this funeral service order", @funeral_service_order, method: :delete %>
+  <div class="mt-4 d-flex align-items-center">
+    <%= link_to "Edit this funeral service order", edit_funeral_service_order_path(@funeral_service_order), class: "btn btn-warning me-3" %>
+    <span class="me-3">|</span>
+    <%= link_to "Back to funeral service orders", funeral_service_orders_path, class: "btn btn-secondary me-3" %>
+    <%= button_to "Destroy this funeral service order", @funeral_service_order, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
+  </div>
+
 </div>

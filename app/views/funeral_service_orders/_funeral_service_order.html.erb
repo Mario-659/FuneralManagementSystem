@@ -1,22 +1,8 @@
-<div id="<%= dom_id funeral_service_order %>">
-  <p>
-    <strong>Order:</strong>
-    <%= funeral_service_order.order_id %>
-  </p>
-
-  <p>
-    <strong>Funeral:</strong>
-    <%= funeral_service_order.funeral_id %>
-  </p>
-
-  <p>
-    <strong>Service:</strong>
-    <%= funeral_service_order.service_id %>
-  </p>
-
-  <p>
-    <strong>Quantity:</strong>
-    <%= funeral_service_order.quantity %>
-  </p>
-
+<div class="card mb-4" id="<%= dom_id funeral_service_order %>">
+  <div class="card-body">
+    <h5 class="card-title">Order ID: <%= funeral_service_order.order_id %></h5>
+    <p class="card-text"><strong>Funeral:</strong> <%= funeral_service_order.funeral_id %></p>
+    <p class="card-text"><strong>Service:</strong> <%= funeral_service_order.service_id %></p>
+    <p class="card-text"><strong>Quantity:</strong> <%= funeral_service_order.quantity %></p>
+  </div>
 </div>

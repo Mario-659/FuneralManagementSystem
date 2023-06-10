@@ -1,9 +1,13 @@
-<h1>New mourning card</h1>
+<div class="container mt-5">
 
-<%= render "form", mourning_card: @mourning_card %>
+  <h1 class="display-4 mb-4">New Mourning Card</h1>
 
-<br>
+  <div class="mb-4">
+    <%= render "form", mourning_card: @mourning_card %>
+  </div>
 
-<div>
-  <%= link_to "Back to mourning cards", mourning_cards_path %>
+  <div class="mt-4">
+    <%= link_to "Back to mourning cards", mourning_cards_path, class: "btn btn-secondary" %>
+  </div>
+
 </div>

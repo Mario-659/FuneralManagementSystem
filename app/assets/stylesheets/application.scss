@@ -1,5 +1,12 @@
 @import "bootstrap";
 
+$navbar-background-color: #333;
+$navbar-hover-color: #444;
+
+$content-background-color: #f9f9f9;
+
+$footer-background-color: $navbar-background-color;
+
 // Base styles
 body, html {
     height: 100%;
@@ -22,7 +29,7 @@ body {
 
 // Navigation bar styles
 .navbar {
-    background-color: #333;
+    background-color: $navbar-background-color;
     padding: 1em 0;
 
     .navbar-nav {
@@ -31,17 +38,33 @@ body {
         .nav-item {
             margin: 0 1em;
 
+            button {
+                background-color: $navbar-background-color;
+                border: none;
+                color: white;
+                padding: 0.5em 1em;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: $navbar-hover-color;
+                }
+
+                &.nav-active {
+                    background-color: $navbar-hover-color;
+                }
+            }
+
             .nav-link {
                 color: white;
                 padding: 0.5em 1em;
                 transition: background-color 0.3s ease;
 
                 &:hover {
-                    background-color: #444;
+                    background-color: $navbar-hover-color;
                 }
 
                 &.nav-active {
-                    background-color: #444;
+                    background-color: $navbar-hover-color;
                 }
             }
         }
@@ -51,7 +74,7 @@ body {
 // Content styles
 .content {
     padding: 2em;
-    background-color: #f9f9f9;
+    background-color: $content-background-color;
     border-radius: 4px;
 }
 
@@ -59,7 +82,7 @@ body {
 .footer {
     text-align: center;
     padding: 1em 0;
-    background-color: #333;
+    background-color: $footer-background-color;
     color: white;
     flex-shrink: 0;
 }

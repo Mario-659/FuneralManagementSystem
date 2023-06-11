@@ -11,30 +11,38 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item <%= 'nav-active' if current_page?(root_path) %>">
-                    <a class="nav-link" href="<%= root_path %>">Home</a>
-                </li>
-                <li class="nav-item <%= 'nav-active' if current_page?(funerals_path) %>">
-                    <a class="nav-link" href="<%= funerals_path %>">Funerals</a>
-                </li>
-                <li class="nav-item <%= 'nav-active' if current_page?(funeral_services_path) %>">
-                    <a class="nav-link" href="<%= funeral_services_path %>">Funeral Services</a>
-                </li>
-                <li class="nav-item <%= 'nav-active' if current_page?(mourning_cards_path) %>">
-                    <a class="nav-link" href="<%= mourning_cards_path %>">Mourning Cards</a>
-                </li>
-                <li class="nav-item <%= 'nav-active' if current_page?(users_path) %>">
-                    <a class="nav-link" href="<%= users_path %>">Users</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <% if user_signed_in? %>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item <%= 'nav-active' if current_page?(home_path) %>">
+                        <a class="nav-link" href="<%= home_path %>">Home</a>
+                    </li>
+                    <li class="nav-item <%= 'nav-active' if current_page?(funerals_path) %>">
+                        <a class="nav-link" href="<%= funerals_path %>">Funerals</a>
+                    </li>
+                    <li class="nav-item <%= 'nav-active' if current_page?(funeral_services_path) %>">
+                        <a class="nav-link" href="<%= funeral_services_path %>">Funeral Services</a>
+                    </li>
+                    <li class="nav-item <%= 'nav-active' if current_page?(mourning_cards_path) %>">
+                        <a class="nav-link" href="<%= mourning_cards_path %>">Mourning Cards</a>
+                    </li>
+                    <li class="nav-item <%= 'nav-active' if current_page?(users_path) %>">
+                        <a class="nav-link" href="<%= users_path %>">Users</a>
+                    </li>
+                    <!-- Add Sign Out Button -->
+                    <li class="nav-item">
+                        <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <% else %>
+        <%= button_to "Sign in", new_user_session_path %>
+    <% end %>
     <div class="container mt-5">
         <%= yield %>
     </div>

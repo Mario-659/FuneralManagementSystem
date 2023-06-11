@@ -1,7 +1,9 @@
   <div class="container mt-5">
-    <div class="alert alert-success" role="alert">
-      <%= notice %>
-    </div>
+    <% if notice %>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
 
     <h1 class="display-4 mb-4">Funerals</h1>
 

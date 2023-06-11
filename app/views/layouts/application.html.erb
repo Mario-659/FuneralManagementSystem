@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ZakladPogrzebowy</title>
+    <title>Funeral Service Management</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,32 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item <%= 'nav-active' if current_page?(root_path) %>">
+                    <a class="nav-link" href="<%= root_path %>">Home</a>
+                </li>
+                <li class="nav-item <%= 'nav-active' if current_page?(funerals_path) %>">
+                    <a class="nav-link" href="<%= funerals_path %>">Funerals</a>
+                </li>
+                <li class="nav-item <%= 'nav-active' if current_page?(funeral_services_path) %>">
+                    <a class="nav-link" href="<%= funeral_services_path %>">Funeral Services</a>
+                </li>
+                <li class="nav-item <%= 'nav-active' if current_page?(mourning_cards_path) %>">
+                    <a class="nav-link" href="<%= mourning_cards_path %>">Mourning Cards</a>
+                </li>
+                <li class="nav-item <%= 'nav-active' if current_page?(users_path) %>">
+                    <a class="nav-link" href="<%= users_path %>">Users</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <%= yield %>
+    </div>
   </body>
 </html>

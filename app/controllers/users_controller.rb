@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :is_admin?, only: %i[ show edit update destroy create index ]
   before_action :set_user, only: %i[ show edit update destroy ]
 
   # GET /users or /users.json

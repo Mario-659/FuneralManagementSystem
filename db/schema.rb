@@ -10,9 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_13_185452) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_13_185553) do
   create_table "deceaseds", force: :cascade do |t|
-    t.integer "deceased_id"
     t.integer "user_id", null: false
     t.string "first_name"
     t.string "last_name"
@@ -24,7 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_185452) do
   end
 
   create_table "funeral_service_orders", force: :cascade do |t|
-    t.integer "order_id"
     t.integer "funeral_id", null: false
     t.integer "service_id", null: false
     t.integer "quantity"
@@ -35,7 +33,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_185452) do
   end
 
   create_table "funeral_services", force: :cascade do |t|
-    t.integer "service_id"
     t.string "name"
     t.text "description"
     t.decimal "price"
@@ -44,7 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_185452) do
   end
 
   create_table "funerals", force: :cascade do |t|
-    t.integer "funeral_id"
     t.integer "deceased_id", null: false
     t.string "burial_place"
     t.integer "burial_type"
@@ -56,7 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_185452) do
   end
 
   create_table "mourning_cards", force: :cascade do |t|
-    t.integer "card_id"
     t.integer "funeral_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -64,7 +59,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_185452) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "user_id"
     t.string "user_role"
     t.string "username"
     t.string "email"

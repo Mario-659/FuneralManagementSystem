@@ -22,6 +22,7 @@ class DeceasedsController < ApplicationController
   # POST /deceaseds or /deceaseds.json
   def create
     @deceased = Deceased.new(deceased_params)
+    @deceased.user_id = current_user.id
 
     respond_to do |format|
       if @deceased.save

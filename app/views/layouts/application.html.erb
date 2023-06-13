@@ -32,6 +32,9 @@
                     <li class="nav-item <%= 'nav-active' if current_page?(mourning_cards_path) %>">
                         <a class="nav-link" href="<%= mourning_cards_path %>">Mourning Cards</a>
                     </li>
+                    <li class="nav-item <%= 'nav-active' if current_page?(deceaseds_path) %>">
+                        <a class="nav-link" href="<%= deceaseds_path %>">Deceased</a>
+                    </li>
                 <% end %>
 
                 <% if current_user && current_user.user_role == 'admin' %>

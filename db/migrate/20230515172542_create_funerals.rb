@@ -4,7 +4,7 @@ class CreateFunerals < ActiveRecord::Migration[7.0]
       t.integer :funeral_id
       t.references :deceased, null: false, foreign_key: true
       t.string :burial_place
-      t.string :burial_type
+      t.integer :burial_type
       t.string :reception_location
       t.date :funeral_date
 

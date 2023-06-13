@@ -26,9 +26,9 @@
     <%= form.text_field :burial_place, class: "form-control", required: true %>
   </div>
 
-  <div class="mb-3">
+  <div class="field">
     <%= form.label :burial_type, class: "form-label" %>
-    <%= form.text_field :burial_type, class: "form-control", required: true %>
+    <%= form.select :burial_type, Funeral.burial_types.keys, include_blank: true, class: "form-control" %>
   </div>
 
   <div class="mb-3">

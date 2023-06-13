@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_11_133239) do
     t.integer "funeral_id"
     t.integer "deceased_id", null: false
     t.string "burial_place"
-    t.string "burial_type"
+    t.integer "burial_type"
     t.string "reception_location"
     t.date "funeral_date"
     t.datetime "created_at", null: false

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_11_133239) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_13_185452) do
   create_table "deceaseds", force: :cascade do |t|
     t.integer "deceased_id"
     t.integer "user_id", null: false
@@ -81,8 +81,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_11_133239) do
   end
 
   add_foreign_key "deceaseds", "users"
+  add_foreign_key "funeral_service_orders", "funeral_services", column: "service_id"
   add_foreign_key "funeral_service_orders", "funerals"
-  add_foreign_key "funeral_service_orders", "services"
   add_foreign_key "funerals", "deceaseds"
   add_foreign_key "mourning_cards", "funerals"
 end

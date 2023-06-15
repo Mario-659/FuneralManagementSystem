@@ -11,11 +11,6 @@
   <% end %>
 
   <div class="mb-3">
-    <%= form.label :service_id %>
-    <%= form.number_field :service_id, class: 'form-control' %>
-  </div>
-
-  <div class="mb-3">
     <%= form.label :name, class: 'form-label' %>
     <%= form.text_field :name, class: 'form-control' %>
   </div>
@@ -27,7 +22,7 @@
 
   <div class="mb-3">
     <%= form.label :price, class: 'form-label' %>
-    <%= form.text_field :price, class: 'form-control' %>
+    <%= form.number_field :price, class: 'form-control' %>
   </div>
 
   <div class="mb-3">

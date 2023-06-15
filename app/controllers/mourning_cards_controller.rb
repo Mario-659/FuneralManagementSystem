@@ -57,6 +57,12 @@ class MourningCardsController < ApplicationController
     end
   end
 
+  def show_pdf
+    mourning_card = MourningCard.find(params[:id])
+    pdf = MourningCardPdf.new(mourning_card)
+    send_data pdf.render, filename: "mourning_card_#{mourning_card.id}.pdf", type: 'application/pdf'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_mourning_card

@@ -65,6 +65,6 @@ class MourningCardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mourning_card_params
-      params.require(:mourning_card).permit(:card_id, :funeral_id)
+      params.require(:mourning_card).permit(:card_id, :funeral_id, :description)
     end
 end

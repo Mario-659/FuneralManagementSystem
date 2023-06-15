@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_13_185553) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_15_195242) do
   create_table "deceaseds", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "first_name"
@@ -55,6 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_185553) do
     t.integer "funeral_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
     t.index ["funeral_id"], name: "index_mourning_cards_on_funeral_id"
   end
 

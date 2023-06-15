@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   get 'home', to: 'home#index'
   resources :mourning_cards
   resources :funeral_service_orders

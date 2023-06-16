@@ -11,8 +11,8 @@
   <% end %>
 
   <div class="mb-3">
-    <%= form.label :funeral_id %>
-    <%= form.number_field :funeral_id, class: 'form-control' %>
+    <%= form.label :funeral_id, "Select Funeral" %>
+    <%= form.collection_select(:funeral_id, Funeral.includes(:deceased).all, :id, :display_name, { prompt: 'Please select a funeral' }, { class: 'form-control' }) %>
   </div>
 
   <div class="mb-3">

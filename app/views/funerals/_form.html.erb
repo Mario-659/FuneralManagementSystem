@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="mb-3">
+    <%= form.label :deceased_id, "Select Deceased" %>
+    <%= form.collection_select(:deceased_id, Deceased.all, :id, :display_name, { prompt: 'Please select a Deceased' }, { class: 'form-control' }) %>
+  </div>
+
+  <div class="mb-3">
     <%= form.label :deceased_id, class: "form-label" %>
     <%= form.number_field :deceased_id, class: "form-control", required: true %>
   </div>

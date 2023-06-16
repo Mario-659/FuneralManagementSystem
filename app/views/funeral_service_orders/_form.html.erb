@@ -11,18 +11,18 @@
   <% end %>
 
   <div class="mb-3">
-    <%= form.label :funeral_id, class: 'form-control' %>
-    <%= form.number_field :funeral_id %>
+    <%= form.label :funeral_id, "Select Funeral" %>
+    <%= form.collection_select(:funeral_id, Funeral.all, :id, :funeral_date, { prompt: 'Please select a funeral' }, { class: 'form-control' }) %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :service_id, class: 'form-control' %>
-    <%= form.number_field :service_id %>
+    <%= form.label :service_id, "Select Service" %>
+    <%= form.collection_select(:service_id, FuneralService.all, :id, :name, { prompt: 'Please select a service' }, { class: 'form-control' }) %>
   </div>
 
   <div class="mb-3">
-    <%= form.label :quantity, class: 'form-control' %>
-    <%= form.number_field :quantity %>
+    <%= form.label :quantity, class: 'form-label' %>
+    <%= form.number_field :quantity, class: 'form-control' %>
   </div>
 
   <div class="mb-3">

@@ -12,13 +12,13 @@
     <% @users.each do |user| %>
       <%= render user %>
       <p class="mb-3">
-        <%= link_to "Show this user", user, class: "btn btn-primary" %>
+        <%= link_to "Show this user", user, class: "btn button-primary" %>
       </p>
     <% end %>
   </div>
 
   <div class="mt-4">
-    <%= link_to "New user", new_user_path, class: "btn btn-success" %>
+    <%= link_to "New user", new_user_path, class: "btn button-success" %>
   </div>
 
 </div>

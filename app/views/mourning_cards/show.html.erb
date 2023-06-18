@@ -10,13 +10,13 @@
     <%= render @mourning_card %>
   </div>
 
-  <%= link_to 'Download Mourning Card as PDF', show_pdf_mourning_card_path(@mourning_card), target: "_blank", class: "btn btn-secondary" %>
+  <%= link_to 'Download Mourning Card as PDF', show_pdf_mourning_card_path(@mourning_card), target: "_blank", class: "btn button-secondary" %>
 
   <div class="mt-4 d-flex align-items-center">
-    <%= link_to "Edit this mourning card", edit_mourning_card_path(@mourning_card), class: "btn btn-warning me-3" %>
+    <%= link_to "Edit this mourning card", edit_mourning_card_path(@mourning_card), class: "btn button-warning me-3" %>
     <span class="me-3">|</span>
-    <%= link_to "Back to mourning cards", mourning_cards_path, class: "btn btn-secondary me-3" %>
-    <%= button_to "Destroy this mourning card", @mourning_card, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %>
+    <%= link_to "Back to mourning cards", mourning_cards_path, class: "btn button-secondary me-3" %>
+    <%= button_to "Destroy this mourning card", @mourning_card, method: :delete, class: "btn button-danger", data: { confirm: 'Are you sure?' } %>
   </div>
 
 </div>

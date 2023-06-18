@@ -7,6 +7,8 @@ $content-background-color: #f9f9f9;
 
 $footer-background-color: $navbar-background-color;
 
+$link-text-color: #727272;
+
 body, html {
     height: 100%;
     margin: 0;
@@ -25,6 +27,17 @@ body {
     margin: 2em auto;
     max-width: 1200px;
     padding: 0 20px;
+}
+
+a {
+    color: $link-text-color;
+}
+
+.form-check-input:checked {
+    $checkbox-checked-color: $link-text-color;
+
+    background-color: $checkbox-checked-color;
+    border-color: $checkbox-checked-color;
 }
 
 .navbar {
@@ -110,3 +123,103 @@ body {
 .card-body {
     background-color: #f0eada;
 }
+
+$primary-bg: #7b6641;
+$primary-hover-bg: #7b6641;
+$primary-hover-border: #7b6641;
+
+$secondary-bg: #b0aea6;
+$secondary-hover-bg: #898780;
+$secondary-hover-border: #63625d;
+
+$success-bg: #a18555;
+$success-hover-bg: #a18555;
+$success-hover-border: #a18555;
+
+
+
+$danger-bg: $secondary-bg;
+$danger-hover-bg: $secondary-hover-bg;
+$danger-hover-border: $secondary-hover-border;
+
+$warning-bg: $secondary-bg;
+$warning-hover-bg: $secondary-hover-bg;
+$warning-hover-border: $secondary-hover-border;
+
+$info-bg: $secondary-bg;
+$info-hover-bg: $secondary-hover-bg;
+$info-hover-border: $secondary-hover-border;
+
+
+.button-primary {
+    background-color: $primary-bg;
+    color: #fff;
+    border-radius: 3px;
+    padding: 10px 20px;
+    border: none;
+
+    &:hover {
+        background-color: $primary-hover-bg;
+    }
+}
+
+.button-success {
+    background-color: $success-bg;
+    color: #fff;
+    border-radius: 3px;
+    padding: 10px 20px;
+    border: none;
+
+    &:hover {
+        background-color: $success-hover-bg;
+    }
+}
+
+.button-danger {
+    background-color: $danger-bg;
+    color: #fff;
+    border-radius: 3px;
+    padding: 10px 20px;
+    border: none;
+
+    &:hover {
+        background-color: $danger-hover-bg;
+    }
+}
+
+.button-warning {
+    background-color: $warning-bg;
+    color: #333;
+    border-radius: 3px;
+    padding: 10px 20px;
+    border: none;
+
+    &:hover {
+        background-color: $warning-hover-bg;
+    }
+}
+
+.button-info {
+    background-color: $info-bg;
+    color: #fff;
+    border-radius: 3px;
+    padding: 10px 20px;
+    border: none;
+
+    &:hover {
+        background-color: $info-hover-bg;
+    }
+}
+
+.button-secondary {
+    background-color: $secondary-bg;
+    color: #333;
+    border-radius: 3px;
+    padding: 10px 20px;
+    border: none;
+
+    &:hover {
+        background-color: $secondary-hover-bg;
+    }
+}
+

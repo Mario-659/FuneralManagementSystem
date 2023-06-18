@@ -12,13 +12,13 @@
     <% @deceaseds.each do |deceased| %>
       <%= render deceased %>
       <p class="mb-3">
-        <%= link_to "Show this deceased", deceased, class: "btn btn-primary" %>
+        <%= link_to "Show this deceased", deceased, class: "btn button-primary" %>
       </p>
     <% end %>
   </div>
 
   <div class="mt-4">
-    <%= link_to "New deceased", new_deceased_path, class: "btn btn-success" %>
+    <%= link_to "New deceased", new_deceased_path, class: "btn button-success" %>
   </div>
 
 </div>

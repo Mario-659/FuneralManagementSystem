@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
 $navbar-background-color: #333;
 $navbar-hover-color: #444;
@@ -15,7 +16,7 @@ body, html {
 }
 
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Libre Baskerville', Helvetica, Arial, sans-serif;
     line-height: 1.6;
     display: flex;
     flex-direction: column;

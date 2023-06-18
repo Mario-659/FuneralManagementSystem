@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :is_admin?, only: %i[ show edit update destroy create index ]
+  before_action :ensure_admin, only: %i[ show edit update destroy create index ]
   before_action :set_user, only: %i[ show edit update destroy ]
 
   # GET /users or /users.json
@@ -67,5 +68,12 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:user_role, :username, :email, :password)
+    end
+
+    def ensure_admin
+      unless current_user && current_user.user_role == 'admin'
+        flash[:alert] = "You are not authorized to access this page."
+        redirect_to root_path
+      end
     end
 end

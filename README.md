@@ -1,24 +1,27 @@
-# README
+# Funeral Management Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Funeral Management Application is a web-based application designed manage the processes involved in planning and organizing funerals. 
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+1. Clone the repository
 
-* System dependencies
+2. Install the dependencies
 
-* Configuration
+```bash
+bundle install
+```
 
-* Database creation
+3. Create database schema
 
-* Database initialization
+```bash
+rails db:migrate
+```
 
-* How to run the test suite
+4. Start the server
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+rails s
+```
 
-* Deployment instructions
-
-* ...
+> Note that application was developed and tested on Linux environment. It may not work on Windows.

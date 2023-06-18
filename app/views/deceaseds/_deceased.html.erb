@@ -1,7 +1,7 @@
 <div class="card mb-4" id="<%= dom_id deceased %>">
   <div class="card-body">
-    <h5 class="card-title">Deceased id<%= deceased.id %></h5>
-    <p class="card-text"><strong>User's id:</strong> <%= deceased.user_id %></p>
+    <p class="card-text">Deceased id: <%= deceased.id %></p>
+    <p class="card-text"><strong>Created by user:</strong> <%= deceased.user.email %></p>
     <p class="card-text"><strong>First Name:</strong> <%= deceased.first_name %></p>
     <p class="card-text"><strong>Last Name:</strong> <%= deceased.last_name %></p>
     <p class="card-text"><strong>Date of Birth:</strong> <%= deceased.date_of_birth %></p>

@@ -10,13 +10,24 @@ class MourningCardPdf < Prawn::Document
       normal: Rails.root.join('app/assets/fonts/vivaldi.ttf')
     })
 
+    font_families.update("Cinzel Regular" => {
+      normal: Rails.root.join('app/assets/fonts/Cinzel-Regular.ttf')
+    })
+
+    font_families.update("Cinzel Bold" => {
+      normal: Rails.root.join('app/assets/fonts/Cinzel-Bold.ttf')
+    })
+
     generate_pdf
   end
 
   def generate_pdf
     # Header
     move_down 20
-    text "Mourning Card", size: 26, style: :bold, align: :center
+
+    font "Cinzel Regular" do
+      text "Mourning Card", size: 26, align: :center
+    end
     move_down 20
 
     move_down 30
@@ -25,7 +36,9 @@ class MourningCardPdf < Prawn::Document
     end
     move_down 20
 
-    text "#{@funeral.deceased.first_name} #{@funeral.deceased.last_name}", size: 20, style: :italic, align: :center
+    font "Cinzel Bold" do
+      text "#{@funeral.deceased.first_name} #{@funeral.deceased.last_name}", size: 20, align: :center
+    end
     move_down 20
 
     font "Vivaldi" do
@@ -34,11 +47,15 @@ class MourningCardPdf < Prawn::Document
 
     move_down 200
 
-    text "Funeral Information", size: 18, style: :bold, align: :center
+    font "Cinzel Regular" do
+      text "Funeral Information", size: 18, align: :center
+    end
     move_down 30
 
-    text "Burial Place: #{@funeral.burial_place}", size: 14, align: :center
-    text "Funeral Date: #{@funeral.funeral_date.strftime('%B %d, %Y')}", size: 14, align: :center
+    font "Cinzel Regular" do
+      text "Burial Place: #{@funeral.burial_place}", size: 14, align: :center
+      text "Funeral Date: #{@funeral.funeral_date.strftime('%B %d, %Y')}", size: 14, align: :center
+    end
 
   end
 end
